@@ -1,0 +1,190 @@
+/* NavBar */
+nav.navbar {
+  box-shadow: 0 0.5rem 1rem #0000001a;
+  background: linear-gradient(
+    to right,
+    rgba(234, 234, 234, 0.5),
+    rgba(219, 219, 219, 0.5),
+    rgba(242, 242, 242, 0.5),
+    rgba(173, 169, 150, 0.5)
+  );
+}
+
+.navbar-toggler {
+    width: fit-content;
+}
+
+nav.navbar .navbar-brand img {
+  width: 20%;
+}
+
+nav.navbar .nav-link.active {
+    color: var(--main-color);
+}
+
+nav.navbar .nav-link {
+    position: relative;
+}
+
+nav.navbar .nav-link::before,
+nav.navbar .nav-link::after {
+    content: "";
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    opacity: 0;
+    transition-duration: .5s;
+}
+
+nav.navbar .nav-link::before {
+    top: 0;
+    left: 0;
+    border-top: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    transform: translateX(-100%);
+}
+
+nav.navbar .nav-link::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid var(--main-color);
+    border-right: 1px solid var(--main-color);
+    transform: translateX(100%);
+    
+}
+
+nav.navbar .nav-link.active::before,
+nav.navbar .nav-link:hover::before,
+nav.navbar .nav-link.active::after,
+nav.navbar .nav-link:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+nav.navbar ul li i {
+    color: #777;
+}
+
+/* Header Page */
+#SC-Carousel {
+  position: relative;
+}
+
+#SC-Carousel > button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+#SC-Carousel > button.prev {
+  left: 30px;
+  right: 0;
+}
+
+#SC-Carousel > button.next {
+  right: 30px;
+}
+
+#SC-Carousel .sc-carousel-inner {
+  position: relative;
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item.active {
+  z-index: 1;
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item:nth-of-type(1) {
+  background-image: url("../nike_images/home-bg-1.jpg");
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item:nth-of-type(2) {
+  background-image: url("../nike_images/home-bg-2.jpg");
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item:nth-of-type(3) {
+  background-image: url("../nike_images/home-bg-3.jpg");
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item .part1 {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translate(-50%);
+  transition-duration: 1s;
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item.active .part1 {
+  opacity: 1;
+  transform: translate(0);
+  transition-delay: 1s;
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item .part1 .item {
+  width: 80%;
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item .part1 .item h2 {
+    margin-block: 20px;
+    font-size: 50px;
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item .part2 .item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item .part2 img:nth-of-type(1) {
+  position: relative;
+  width: 90%;
+  opacity: 0;
+  transform: translate(-30px, -50%);
+  transition-duration: 1s;
+}
+
+#SC-Carousel
+  .sc-carousel-inner
+  .sc-carousel-item.active
+  .part2
+  img:nth-of-type(1) {
+  opacity: 1;
+  transform: translate(-30px, -10%);
+  transition-delay: 0.5s;
+}
+
+#SC-Carousel .sc-carousel-inner .sc-carousel-item .part2 img:nth-of-type(2) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -60%) rotate(0deg) scale(0.5);
+  opacity: 0;
+  width: 100%;
+  transition-duration: 1s;
+}
+
+#SC-Carousel
+  .sc-carousel-inner
+  .sc-carousel-item.active
+  .part2
+  img:nth-of-type(2) {
+  transform: translate(-40%, -60%) rotate(-30deg) scale(1);
+  opacity: 1;
+}

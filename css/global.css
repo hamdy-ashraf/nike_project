@@ -1,0 +1,28 @@
+:root {
+    --main-color: #A3031C;
+    --first-color: #A3031C;
+    --second-color: #0D7AD4;
+    --third-color: #EC9720;
+}
+
+* {
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    height: 5000px;
+}
+
+.mainButton {
+    background-color: transparent;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+.mainButton:hover {
+    color: #fff;
+    background-color: var(--main-color);
+}
+
+.mainColor {
+    color: var(--main-color);
+}
