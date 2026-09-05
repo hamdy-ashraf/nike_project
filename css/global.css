@@ -1,28 +1,70 @@
 :root {
-    --main-color: #A3031C;
-    --first-color: #A3031C;
-    --second-color: #0D7AD4;
-    --third-color: #EC9720;
+  --main-color: #cb0215;
+  --first-color: #cb0215;
+  --second-color: #0f7ad7;
+  --third-color: #ed9721;
 }
 
 * {
-    font-family: "Nunito", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
-    height: 5000px;
+  /* height: 5000px; */
 }
 
 .mainButton {
-    background-color: transparent;
-    color: var(--main-color);
-    border: 1px solid var(--main-color);
+  background-color: transparent;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  transition-duration: .5s;
 }
 .mainButton:hover {
-    color: #fff;
-    background-color: var(--main-color);
+  color: #fff;
+  background-color: var(--main-color);
 }
 
 .mainColor {
-    color: var(--main-color);
+  color: var(--main-color);
+}
+
+.mainBorder {
+  border: 1px solid var(--main-color);
+}
+
+section {
+  background: linear-gradient(
+    to right,
+    rgb(234, 234, 234),
+    rgb(219, 219, 219),
+    rgb(242, 242, 242),
+    rgb(173, 169, 150)
+  );
+}
+
+section#Featured {
+  background-color: #ff0;
+}
+
+section .title {
+  position: relative;
+}
+
+section .title img {
+  width: 200px;
+}
+
+section .title h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: initial;
+  }
 }
