@@ -49,7 +49,13 @@
           </ul>
           <ul class="list-unstyled d-flex column-gap-3 fs-5 mb-0">
             <li><i class="fas fa-heart"></i></li>
-            <li><i class="fas fa-shopping-cart" data-key-popup="shop" onclick="openPopup('shop')"></i></li>
+            <li>
+              <i
+                class="fas fa-shopping-cart"
+                data-key-popup="shop"
+                onclick="showCard()"
+              ></i>
+            </li>
             <li>
               <i
                 class="fas fa-user"
@@ -200,13 +206,14 @@
     <div
       class="popup position-fixed top-0 start-0 z-3 w-100 h-100 justify-content-center align-items-center text-center"
       data-popup-name="login"
-      onclick="closePopup()"
+      
     >
       <div class="box px-3 py-4 rounded-3 position-relative">
         <div class="head">
           <i
-            class="far fa-times-circle exit data-key-popup='login'"
-            onclick="closePopup()"
+            class="far fa-times-circle exit"
+            data-key-popup="login"
+            onclick="closePopup('login')"
           ></i>
           <h3 class="mainColor mb-5">Login</h3>
         </div>
@@ -234,13 +241,42 @@
       </div>
     </div>
 
-    <footer class="bg-dark py-3">
-        <p class="text-center text-light mb-0">&copy; 2026 Hamdy Ashraf, TSC. | All Rights Reserved .</p>
-    </footer>
+    <!-- Shop Popup -->
+    <div
+      class="popup position-fixed top-0 start-0 z-3 w-100 h-100"
+      data-popup-name="shop"
+    >
+      <div class="box px-3 py-4 rounded-3 position-relative">
+        <div class="head">
+          <i
+            class="far fa-times-circle exit"
+            data-key-popup="shop"
+            onclick="closePopup('shop')"
+          ></i>
+          <h3 class="mainColor mb-5 text-center">Shop</h3>
+        </div>
+        <div class="body">
+          <div class="row">
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- <div class="loadingPage">
-        <img src="./nike_images/nike.gif" alt="">
-    </div> -->
+    <!-- Product Popup -->
+    <div
+      class="popup position-fixed top-0 start-0 z-3 w-100 h-100 justify-content-center align-items-center"
+      data-popup-name="product"
+      onclick="closePopup()"
+    >
+      <div class="box px-3 py-4 rounded-3 position-relative"></div>
+    </div>
+
+    <footer class="bg-dark py-3">
+      <p class="text-center text-light mb-0">
+        &copy; 2026 Hamdy Ashraf, TSC. | All Rights Reserved .
+      </p>
+    </footer>
 
     <script src="./js/bootstrap.js"></script>
     <script src="./js/shoes.js"></script>

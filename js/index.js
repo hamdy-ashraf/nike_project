@@ -8,8 +8,15 @@ let scCarousel = document.querySelector("#SC-Carousel"),
   sections = document.querySelectorAll("section, header"),
   latestContent = document.querySelector("#Latest .content"),
   featuredContent = document.querySelector("#Featured .content .row"),
-  popupBoxes = document.querySelectorAll(".popup .box");
-// console.log(popupKey);
+  popupBoxes = document.querySelectorAll(".popup .box"),
+  cardProducts = [];
+
+  if(localStorage.getItem("products") == null){
+    updateLocalStorage()
+  } else {
+    cardProducts = JSON.parse(localStorage.getItem("products"))
+  }
+// console.log(isProductCard);
 checkScrolledNav();
 
 nextBtn.addEventListener("click", function () {
@@ -52,8 +59,14 @@ navLinks.forEach(function (navLink) {
 window.addEventListener("DOMContentLoaded", function () {});
 
 latest.forEach(function (product) {
+    let isProductCard = checkIsProduct(product.id)
+
   latestContent.innerHTML += `
-    <div class="product">
+    <div class="product"
+     data-slected-size="${isProductCard?.size ?? product.sizes[0]}" 
+     data-slected-color="${isProductCard?.color ?? product.colors[0]}"
+     data-product-id="${product.id}"
+     >
         <div class="row mainBorder bg-light p-3 rounded-3 mb-3">
             <div class="col-lg-6 part1">
             <div class="item">
@@ -96,10 +109,15 @@ latest.forEach(function (product) {
                 <div class="size d-flex column-gap-3 list-unstyled">
                 <h6>Size :</h6>
                 <ul class="d-flex column-gap-2 p-0">
-                    ${prepareSize(product.sizes)}
+                    ${prepareSize(product.sizes, isProductCard)}
                 </ul>
                 </div>
-                <button class="btn mainColor mainBorder">Add To Card</button>
+                ${
+                    isProductCard == null ?
+                    `<button class="btn mainColor mainBorder" onclick="addToCard(${product.id}, this);">Add To Card</button>`
+                    :
+                    `<button class="btn mainColor mainBorder remove" onclick="removeFromCard(${product.id}, this);">Remove From Card</button>`
+                }
             </div>
             </div>
         </div>
@@ -124,6 +142,7 @@ features.forEach(function (product) {
                 <div class="icons">
                 <i
                     class="fas fa-search key mb-3 d-flex justify-content-center align-items-center rounded-circle m-auto"
+                    onclick="showProduct(${product.id}); openPopup('product');"
                 ></i>
                 <ul
                     class="list-unstyled d-flex justify-content-center align-items-center column-gap-2"

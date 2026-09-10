@@ -24,6 +24,15 @@ body {
   background-color: var(--main-color);
 }
 
+.mainButton.remove {
+  color: var(--bs-warning);
+  border: 1px solid var(--bs-warning);
+}
+
+.mainButton.remove:hover {
+    background-color: var(--bs-warning);
+}
+
 .mainColor {
   color: var(--main-color);
 }
