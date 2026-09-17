@@ -8,6 +8,34 @@
     width: fit-content;
   }
 
+  nav.navbar {
+    position: relative;
+  }
+
+  nav.navbar .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgb(234, 234, 234),
+      rgb(219, 219, 219),
+      rgb(242, 242, 242),
+      rgb(173, 169, 150)
+    );
+    padding-block: 20px;
+    width: 100%;
+  }
+
+  nav.navbar .nav-link {
+    width: fit-content;
+    margin: auto;
+  }
+
+  nav.navbar .navbar-collapse ul:nth-of-type(2) {
+    justify-content: center;
+  }
+
   nav.navbar .navbar-brand img {
     width: 30%;
   }
@@ -45,13 +73,35 @@
     margin: auto;
   }
 
-    section .title img {
-        width: 80px;
-    }
+  section .title img {
+    width: 80px;
+  }
+
+  .popup[data-popup-name="login"] .box {
+    width: 280px;
+  }
+
+  .popup .body form {
+    width: initial;
+  }
+
+  .popup.active[data-popup-name="product"] {
+  display: block;
+  
+}
+
+.popup.active[data-popup-name="product"] .box {
+    margin: 30px auto;
+    width: 280px;
+}
+
+  .popup[data-popup-name="shop"] .box {
+    width: 280px;
+  }
 }
 
 @media (min-width: 371px) and (max-width: 1300px) {
-    #SC-Carousel .sc-carousel-inner .sc-carousel-item {
+  #SC-Carousel .sc-carousel-inner .sc-carousel-item {
     padding-top: 120px;
   }
 
@@ -61,7 +111,7 @@
 }
 
 @media (min-width: 577px) and (max-width: 1300px) {
-    #SC-Carousel .sc-carousel-inner .sc-carousel-item {
+  #SC-Carousel .sc-carousel-inner .sc-carousel-item {
     padding-top: 140px;
   }
 
@@ -74,8 +124,22 @@
   }
 
   section .title img {
-        width: 100px;
-    }
+    width: 100px;
+  }
+
+  
+
+  .popup[data-popup-name="login"] .box {
+    width: initial;
+  }
+
+  .popup .body form {
+    width: 400px;
+  }
+
+  .popup[data-popup-name="shop"] .box {
+    width: 90%;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1300px) {
@@ -92,8 +156,8 @@
   }
 
   section .title img {
-        width: 200px;
-    }
+    width: 200px;
+  }
 
   #Latest .content .box1 ul li {
     display: flex;
@@ -111,21 +175,40 @@
   #Latest .content .box1 ul li img {
     width: 80%;
   }
+
+  .popup.active[data-popup-name="product"] {
+  display: flex;
+  
+}
+
+.popup.active[data-popup-name="product"] .box {
+    /* margin: 30px auto; */
+    width: 60%;
+}
 }
 
 @media (min-width: 992px) and (max-width: 1300px) {
-    #SC-Carousel > button {
-        width: 45px;
-        height: 45px;
-    }
+  nav.navbar .navbar-collapse {
+    position: static;
+    top: 0%;
+    left: 0;
+    background: initial;
+    padding-block: 0px;
+    width: 0%;
+  }
 
-    #Latest .content {
+  #SC-Carousel > button {
+    width: 45px;
+    height: 45px;
+  }
+
+  #Latest .content {
     width: initial;
   }
 }
 
 @media (min-width: 1181px) and (max-width: 1300px) {
-    #SC-Carousel > button.next {
+  #SC-Carousel > button.next {
     right: 60px;
   }
 }

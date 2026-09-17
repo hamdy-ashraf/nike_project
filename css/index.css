@@ -10,6 +10,10 @@ nav.navbar {
   );
 }
 
+.navbar-brand {
+    width: 40%;
+}
+
 nav.navbar.scrolled {
   background: linear-gradient(
     to right,
@@ -309,6 +313,7 @@ nav.navbar ul li i:hover {
   width: 35px;
   height: 35px;
   box-shadow: 0 10px 15px #0003;
+  cursor: pointer;
 }
 
 #Featured .item:hover .product .icons i,

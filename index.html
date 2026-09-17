@@ -204,8 +204,9 @@
 
     <!-- Login Popup -->
     <div
-      class="popup position-fixed top-0 start-0 z-3 w-100 h-100 justify-content-center align-items-center text-center"
+      class="popup overflow-auto position-fixed top-0 start-0 z-3 w-100 h-100 justify-content-center align-items-center text-center"
       data-popup-name="login"
+      onclick="closePopup('login')"
       
     >
       <div class="box px-3 py-4 rounded-3 position-relative">
@@ -243,8 +244,9 @@
 
     <!-- Shop Popup -->
     <div
-      class="popup position-fixed top-0 start-0 z-3 w-100 h-100"
+      class="popup overflow-auto position-fixed top-0 start-0 z-3 w-100 h-100"
       data-popup-name="shop"
+      onclick="closePopup('shop')"
     >
       <div class="box px-3 py-4 rounded-3 position-relative">
         <div class="head">
@@ -265,9 +267,9 @@
 
     <!-- Product Popup -->
     <div
-      class="popup position-fixed top-0 start-0 z-3 w-100 h-100 justify-content-center align-items-center"
+      class="popup overflow-auto position-fixed top-0 start-0 z-3 w-100 h-100 justify-content-center align-items-center"
       data-popup-name="product"
-      onclick="closePopup()"
+      onclick="closePopup('product')"
     >
       <div class="box px-3 py-4 rounded-3 position-relative"></div>
     </div>

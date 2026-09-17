@@ -176,7 +176,7 @@ function openPopup(popupName) {
 
 function closePopup(popupName) {
   let popupEle = document.querySelector(
-    `.popup[data-popup-name="${popupName}"]`,
+    `.popup[data-popup-name=${popupName}]`,
   );
   popupEle.classList.remove("show");
   setTimeout(function () {
@@ -197,11 +197,10 @@ function showProduct(productId) {
     );
 
   let isProductCard = checkIsProduct(product.id);
-  //   console.log(product);
   popupProduct.innerHTML = `
     <div class="product" data-slected-size="${isProductCard?.size ?? product.sizes[0]}" data-slected-color="${isProductCard?.color ?? product.colors[0]}">
           <div class="row">
-            <div class="col-lg-6">
+            <div class="col-md-6">
               <div class="item">
                 <div class="slectedImage">
                   <img
@@ -215,7 +214,7 @@ function showProduct(productId) {
                 </ul>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-md-6">
               <div class="item">
                 <h4>${product.name}</h4>
                 ${preparePrice(product.price, product.discount)}
@@ -322,7 +321,7 @@ function showCard() {
       let product = getProduct(cardProduct.id);
 
       shopPopupContent.innerHTML += `
-        <div class="col-4">
+        <div class="col-md-4 col-sm-6">
             <div class="item">
             <div class="product bg-light rounded-3 p-3 d-flex flex-column row-gap-2" data-product-id="${product.id}">
                 <img
