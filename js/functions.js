@@ -302,11 +302,6 @@ function checkIsProduct(productId) {
   return result.length == 1 ? result[0] : null;
 }
 
-function showAddOrRemove(products) {
-  if (checkIsProduct()) {
-  }
-}
-
 function showCard() {
   let shopPopupContent = document.querySelector(
     ".popup[data-popup-name='shop'] .box .row",
